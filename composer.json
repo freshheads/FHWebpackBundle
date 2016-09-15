@@ -1,0 +1,31 @@
+{
+    "name": "freshheads/webpack-bundle",
+    "type": "symfony-bundle",
+    "description": "A Symfony bundle to create paths to webpack assets in your Twig templates.",
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/config": "^2.8|^3.0",
+        "symfony/dependency-injection": "^2.8|^3.0",
+        "symfony/event-dispatcher": "^2.8|^3.0",
+        "symfony/http-kernel": "^2.8|^3.0",
+        "symfony/yaml": "^2.8|^3.0",
+        "symfony/twig-bundle" : "^2.8|^3.0",
+        "twig/twig" : "^1.18|^2.0",
+        "freshheads/webpack-stats": "^0.1"
+    },
+    "autoload": {
+        "psr-4": { "FH\\Bundle\\WebpackBundle\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "0.x-dev"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:freshheads/webpack-stats.git"
+        }
+    ]
+}
+
