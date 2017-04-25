@@ -12,6 +12,7 @@
 namespace FH\Bundle\WebpackBundle\Twig;
 
 use FH\Bundle\WebpackBundle\Templating\WebpackHelper;
+use Symfony\Bridge\Twig\Extension\HttpFoundationExtension;
 use Symfony\Component\Asset\Packages;
 
 /**
@@ -29,10 +30,19 @@ class WebpackExtension extends \Twig_Extension
      */
     private $webpackHelper;
 
-    public function __construct(Packages $packages, WebpackHelper $webpackHelper)
-    {
+    /**
+     * @var HttpFoundationExtension
+     */
+    private $httpFoundationExtension;
+
+    public function __construct(
+        Packages $packages,
+        WebpackHelper $webpackHelper,
+        HttpFoundationExtension $httpFoundationExtension
+    ) {
         $this->packages = $packages;
         $this->webpackHelper = $webpackHelper;
+        $this->httpFoundationExtension = $httpFoundationExtension;
     }
 
     public function getFunctions()
@@ -42,13 +52,19 @@ class WebpackExtension extends \Twig_Extension
         ];
     }
 
-    public function getAssetUrl($path, $chunkName, $extension = 'js', $packageName = null)
+    public function getAssetUrl($path, $chunkName, $extension = 'js', $packageName = null, $absolute = false)
     {
-        return
-            $this->packages->getUrl(
-                $this->webpackHelper->getAssetUrl($path, $chunkName, $extension),
-                $packageName
-            );
+        $assetPath = $this->packages->getUrl(
+            $this->webpackHelper->getAssetUrl($path, $chunkName, $extension),
+            $packageName
+        );
+
+        if ($absolute) {
+            return $this->httpFoundationExtension->generateAbsoluteUrl($assetPath);
+        }
+
+        return $assetPath;
+
     }
 
     public function getName()
