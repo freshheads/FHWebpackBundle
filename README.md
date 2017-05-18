@@ -7,6 +7,23 @@ This bundle uses the webpack statistics file to find the newest assets for a giv
 
 Installation
 ------------
+The bundle can be installed using Composer. Add the following requirement and repository to composer.json:
+
+``` yaml
+// composer.json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:freshheads/FHWebpackBundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:freshheads/webpack-stats.git"
+        }
+    ]
+}
+```
 
 Install with composer:
 
