@@ -4,12 +4,12 @@
     "description": "A Symfony bundle to create paths to webpack assets in your Twig templates.",
     "require": {
         "php": ">=5.5.9",
-        "symfony/config": "^2.8|^3.0",
-        "symfony/dependency-injection": "^2.8|^3.0",
-        "symfony/event-dispatcher": "^2.8|^3.0",
-        "symfony/http-kernel": "^2.8|^3.0",
-        "symfony/yaml": "^2.8|^3.0",
-        "symfony/twig-bundle" : "^2.8|^3.0",
+        "symfony/config": "^2.7|^3.0",
+        "symfony/dependency-injection": "^2.7|^3.0",
+        "symfony/event-dispatcher": "^2.7|^3.0",
+        "symfony/http-kernel": "^2.7|^3.0",
+        "symfony/yaml": "^2.7|^3.0",
+        "symfony/twig-bundle" : "^2.7|^3.0",
         "twig/twig" : "^1.18|^2.0",
         "freshheads/webpack-stats": "^0.1"
     },
