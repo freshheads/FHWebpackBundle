@@ -15,6 +15,14 @@
         "email": "info@freshheads.com",
         "issues": "https://github.com/freshheads/FHWebpackBundle/issues"
     },
+    "config": {
+        "platform": {
+            "php": "5.5.9"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.3.5|^5.0"
+    },
     "require": {
         "php": ">=5.5.9",
         "symfony/config": "^2.7|^3.0",
@@ -25,7 +33,7 @@
         "symfony/twig-bundle": "^2.7|^3.0",
         "symfony/templating": "^2.7|^3.0",
         "twig/twig" : "^1.18|^2.0",
-        "freshheads/webpack-stats": "^0.1"
+        "freshheads/webpack-stats": "^1.0"
     },
     "autoload": {
         "psr-4": { "FH\\Bundle\\WebpackBundle\\": "" }
@@ -34,12 +42,6 @@
         "branch-alias": {
             "dev-develop": "1.x-dev"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:freshheads/webpack-stats.git"
-        }
-    ]
+    }
 }
 

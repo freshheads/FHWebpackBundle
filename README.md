@@ -1,6 +1,8 @@
 FHWebpackBundle
 ===============
 
+[![Build Status](https://travis-ci.org/freshheads/FHWebpackBundle.png?branch=develop)](https://travis-ci.org/freshheads/FHWebpackBundle)
+
 A Symfony bundle to create paths to webpack assets in your Twig templates.
 This bundle uses the webpack statistics file to find the newest assets for a given webpack entry.
 
@@ -46,3 +48,8 @@ Usage
 <link rel="stylesheet" href="{{ webpack_asset('assets/frontend/build', 'app', 'css') }}" />
 <script type="text/javascript" src="{{ webpack_asset('assets/frontend/build', 'app', 'js') }}"></script>
 ```
+
+Requirements
+------------
+
+This library works with PHP 5.5.9 or up.
