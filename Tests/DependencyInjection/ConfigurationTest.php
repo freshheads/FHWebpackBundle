@@ -16,7 +16,7 @@ use Symfony\Component\Config\Definition\Processor;
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
  */
-class ConfigurationTest extends \PHPUnit_Framework_TestCase
+final class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @dataProvider dataForProcessedConfiguration

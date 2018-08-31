@@ -1,0 +1,307 @@
+{
+  "hash": "f10c8e176adef5ff27b9",
+  "assetsByChunkName": {
+    "app": [
+      "app.css",
+      "app.js"
+    ],
+    "peoplexs": [
+      "peoplexs.css",
+      "peoplexs.js"
+    ],
+    "schoolformaat": [
+      "schoolformaat.css",
+      "schoolformaat.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "10.f10c8e176adef5ff27b9.10.js",
+      "size": 24828,
+      "chunks": [
+        10
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "e31cc9d83ae5603acc79c060013f0359.eot",
+      "size": 10808,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "0b88fae29803dca96e94820828485c8f.ttf",
+      "size": 10640,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "59d8be82bda663dc277190ad5b776c24.woff",
+      "size": 6652,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "929b0dc020e39121e865af1a0bb2d101.woff2",
+      "size": 5572,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "713192da35bbb712d3103d634e5fdc7f.woff2",
+      "size": 18916,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "c675e6805458e81bf5f52b095cdb4ab2.woff",
+      "size": 23467,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "0d25be791ed095674674d4b302061b88.ttf",
+      "size": 37552,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "fc10b9fd6770b35e0b0629ad50004090.eot",
+      "size": 20552,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "19217f852797c77d4f57d9d03b307c2f.ttf",
+      "size": 37144,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "3406d17bc8c45dcabab13535672481b6.eot",
+      "size": 20338,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "e116b64c2f2f90b6bc4829a062802a50.woff",
+      "size": 23292,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "f9a3c16cccece917af42c82563316c7a.woff2",
+      "size": 18732,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "fd07e6b509977c2aaecefda7f5c26a57.eot",
+      "size": 20541,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "895e6d9f1548776710f086185690886b.ttf",
+      "size": 37488,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "font.90afa358faca7496fd211daa167dcb46.woff2",
+      "size": 18904,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "c44455bad44e8df0ca3b6b8cdc2f47f5.woff",
+      "size": 23469,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "4.f10c8e176adef5ff27b9.4.js",
+      "size": 98525,
+      "chunks": [
+        4
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "app.css",
+      "size": 313569,
+      "chunks": [
+        "app"
+      ],
+      "chunkNames": [
+        "app"
+      ]
+    },
+    {
+      "name": "app.js",
+      "size": 1633718,
+      "chunks": [
+        "app"
+      ],
+      "chunkNames": [
+        "app"
+      ]
+    },
+    {
+      "name": "621c96fcfb7ae9a346497a669dabb204.svg",
+      "size": 8653,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "0.f10c8e176adef5ff27b9.0.js",
+      "size": 5809,
+      "chunks": [
+        0
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "1.f10c8e176adef5ff27b9.1.js",
+      "size": 9851,
+      "chunks": [
+        1
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "2.f10c8e176adef5ff27b9.2.js",
+      "size": 4855,
+      "chunks": [
+        2
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "3.f10c8e176adef5ff27b9.3.js",
+      "size": 2352,
+      "chunks": [
+        3
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "9.f10c8e176adef5ff27b9.9.js",
+      "size": 92979,
+      "chunks": [
+        9
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "5.f10c8e176adef5ff27b9.5.js",
+      "size": 151538,
+      "chunks": [
+        5
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "6.f10c8e176adef5ff27b9.6.js",
+      "size": 14341,
+      "chunks": [
+        6
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "7.f10c8e176adef5ff27b9.7.js",
+      "size": 13170,
+      "chunks": [
+        7
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "8.f10c8e176adef5ff27b9.8.js",
+      "size": 49293,
+      "chunks": [
+        8
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "peoplexs.css",
+      "size": 725,
+      "chunks": [
+        "peoplexs"
+      ],
+      "chunkNames": [
+        "peoplexs"
+      ]
+    },
+    {
+      "name": "peoplexs.js",
+      "size": 525015,
+      "chunks": [
+        "peoplexs"
+      ],
+      "chunkNames": [
+        "peoplexs"
+      ]
+    },
+    {
+      "name": "schoolformaat.css",
+      "size": 303905,
+      "chunks": [
+        "schoolformaat"
+      ],
+      "chunkNames": [
+        "schoolformaat"
+      ]
+    },
+    {
+      "name": "schoolformaat.js",
+      "size": 525070,
+      "chunks": [
+        "schoolformaat"
+      ],
+      "chunkNames": [
+        "schoolformaat"
+      ]
+    },
+    {
+      "name": "11.f10c8e176adef5ff27b9.11.js",
+      "size": 19517,
+      "chunks": [
+        11
+      ],
+      "chunkNames": []
+    },
+    {
+      "name": "img/icon-facebook.13fc22a6e0bfbe76b20cf09c284531d7.jpg",
+      "size": 12947,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "img/icon-twitter.7b4b77deb079df69db2f1d25de6a634f.jpg",
+      "size": 12746,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "img/icon-linkeding.f8f22098f472e37b37562c7795779c82.jpg",
+      "size": 12801,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "img/icon-youtube.e6c36f75f151b06cb4c86c39dd2c8271.jpg",
+      "size": 12845,
+      "chunks": [],
+      "chunkNames": []
+    },
+    {
+      "name": "img/logo.12aa4a4f9b853a60ebc94cab431813c4.jpg",
+      "size": 29980,
+      "chunks": [],
+      "chunkNames": []
+    }
+  ]
+}
