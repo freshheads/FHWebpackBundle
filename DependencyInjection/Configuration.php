@@ -21,7 +21,7 @@ use function method_exists;
  */
 class Configuration implements ConfigurationInterface
 {
-    private const ROOT_NAME = 'fh_webpack';
+    const ROOT_NAME = 'fh_webpack';
     
     public function getConfigTreeBuilder()
     {
