@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /*
  * This file is part of the Freshheads Webpack bundle.
@@ -22,53 +23,25 @@ use Symfony\Component\Templating\Helper\Helper;
  */
 class WebpackHelper extends Helper
 {
-    /**
-     * @var string
-     */
-    const STATS_FILENAME = 'stats.json';
+    private const STATS_FILENAME = 'stats.json';
+    private const ASSETS_REGEX = '/^%s\.[0-9a-zA-Z]+\.%s$/';
 
-    const ASSETS_REGEX = '/^%s\.[0-9a-zA-Z]+\.%s$/';
-
-    /**
-     * @var string
-     */
+    private $statsParser;
     private $webDir;
-
-    /**
-     * @var string
-     */
     private $statsFilename;
-
-    /**
-     * @var array
-     */
     private $stats = [];
 
-    /**
-     * @var Parser
-     */
-    private $statsParser;
-
-    /**
-     * @param Parser $statsParser
-     * @param string $webDir path to web directory on the filesystem.
-     * @param string $statsFilename
-     */
-    public function __construct(Parser $statsParser, $webDir, $statsFilename = self::STATS_FILENAME)
+    public function __construct(Parser $statsParser, string $webDir, string $statsFilename = self::STATS_FILENAME)
     {
+        $this->statsParser = $statsParser;
         $this->webDir = $webDir;
         $this->statsFilename = $statsFilename;
-        $this->statsParser = $statsParser;
     }
 
     /**
-     * @param string $path
-     * @param string $name
-     * @param string $extension
-     * @return string
      * @throws \RuntimeException
      */
-    public function getAssetUrl($path, $name, $extension = 'js')
+    public function getAssetUrl(string $path, string $name, string $extension = 'js'): string
     {
         $assetsPath = $this->normalizePath($this->webDir . DIRECTORY_SEPARATOR . $path);
         $stats = $this->getStats($assetsPath . DIRECTORY_SEPARATOR . $this->statsFilename);
@@ -96,20 +69,16 @@ class WebpackHelper extends Helper
         );
     }
 
-    public function getName()
+    public function getName(): string
     {
         return 'fh_webpack';
     }
 
     /**
-     * @param Stats $stats
-     * @param string $name
-     * @param string $extension
-     * @return string
-     *
-     * @throws StatsException
+     * @throws PropertyNotFoundException
+     * @throws ChunkNotFoundException
      */
-    private function resolveAssetByChunkName(Stats $stats, $name, $extension)
+    private function resolveAssetByChunkName(Stats $stats, string $name, string $extension): string
     {
         return $stats
             ->getAssetsByChunkName()
@@ -117,21 +86,15 @@ class WebpackHelper extends Helper
     }
 
     /**
-     * @param Stats $stats
-     * @param string $path
-     * @param string $name
-     * @param string $extension
-     * @return string
-     *
-     * @throws StatsException
+     * @throws PropertyNotFoundException
      * @throws \RuntimeException
      */
-    private function resolveAsset(Stats $stats, $name, $extension)
+    private function resolveAsset(Stats $stats, string $name, string $extension): string
     {
         $expression = sprintf(self::ASSETS_REGEX, preg_quote($name, '/'), preg_quote($extension, '/'));
 
         foreach ($stats->getAssets() as $asset) {
-            if (preg_match($expression, $asset) >= 1) {
+            if (preg_match($expression, (string) $asset) >= 1) {
                 return (string) $asset;
             }
         }
@@ -139,11 +102,7 @@ class WebpackHelper extends Helper
         throw new \RuntimeException(sprintf('Asset with name %s could not be found in "assets" section of stats.json file', $name));
     }
 
-    /**
-     * @param string $statsFile
-     * @return Stats
-     */
-    private function getStats($statsFile)
+    private function getStats(string $statsFile): Stats
     {
         if (isset($this->stats[$statsFile])) {
             return $this->stats[$statsFile];
@@ -155,10 +114,9 @@ class WebpackHelper extends Helper
     }
 
     /**
-     * @param string $path
-     * @return string
+     * @throws \InvalidArgumentException
      */
-    private function normalizePath($path)
+    private function normalizePath(string $path): string
     {
         $realPath = (new \SplFileInfo($path))->getRealPath();
 

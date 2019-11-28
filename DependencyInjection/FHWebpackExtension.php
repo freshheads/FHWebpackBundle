@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /*
  * This file is part of the Freshheads Webpack bundle.
@@ -21,7 +22,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  */
 class FHWebpackExtension extends Extension
 {
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);

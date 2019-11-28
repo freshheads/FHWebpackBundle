@@ -5,7 +5,7 @@
 <phpunit
         xmlns:xsi                       = "http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation   = "http://schema.phpunit.de/8.4/phpunit.xsd"
-        bootstrap                       = "./Tests/bootstrap.php.dist"
+        bootstrap                       = "./Tests/bootstrap.php"
         executionOrder                  = "depends,defects"
         forceCoversAnnotation           = "true"
         colors                          = "true"

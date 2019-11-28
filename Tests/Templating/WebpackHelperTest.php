@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /*
  * This file is part of the Freshheads Webpack bundle.
@@ -14,7 +15,6 @@ namespace Tests\Templating;
 use FH\Bundle\WebpackBundle\Templating\WebpackHelper;
 use FH\WebpackStats\Parser\StandardParser;
 use PHPUnit\Framework\TestCase;
-use RuntimeException;
 
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
@@ -51,7 +51,7 @@ final class WebpackHelperTest extends TestCase
 
     public function testAssetCouldNotBeFound(): void
     {
-        $this->expectException(RuntimeException::class);
+        $this->expectException(\RuntimeException::class);
 
         $this->helper->getAssetUrl('', 'xuifysdiufysdifysdifysdi');
     }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /*
  * This file is part of the Freshheads Webpack bundle.
@@ -21,9 +22,9 @@ use function method_exists;
  */
 class Configuration implements ConfigurationInterface
 {
-    const ROOT_NAME = 'fh_webpack';
+    private const ROOT_NAME = 'fh_webpack';
     
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder(self::ROOT_NAME);
 
