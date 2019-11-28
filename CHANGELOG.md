@@ -13,6 +13,7 @@ This changelog references the relevant changes (bug and security fixes).
   * Updated testsuite to phpunit ^8.4 
     * Updated phpunit config to [best practices](https://thephp.cc/dates/2019/11/symfonycon/phpunit-best-practices) (slide 52)
   * Added compatibility for Symfony 5.x
+  * Added compatibility for Twig 3.x
 
 1.2.0
 -----

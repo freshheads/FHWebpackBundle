@@ -28,7 +28,7 @@
         "symfony/yaml": "^3.4 || ^4.0 || ^5.0",
         "symfony/twig-bundle": "^3.4 || ^4.0 || ^5.0",
         "symfony/templating": "^3.4 || ^4.0 || ^5.0",
-        "twig/twig" : "^2.0",
+        "twig/twig" : "^2.0 || ^3.0",
         "freshheads/webpack-stats": "^1.1"
     },
     "scripts": {
