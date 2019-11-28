@@ -3,20 +3,32 @@ parameters:
     fh_webpack.stats_filename: 'stats.json'
 
 services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    FH\WebpackStats\Parser\StandardParser: ~
+    FH\Bundle\WebpackBundle\Twig\WebpackExtension: ~
+    FH\Bundle\WebpackBundle\Templating\WebpackHelper:
+        bind:
+            $webDir: '%fh_webpack.web_dir%'
+            $statsFilename: '%fh_webpack.stats_filename%'
+
+    # alias
+    FH\WebpackStats\Parser\Parser: '@FH\WebpackStats\Parser\StandardParser'
+
+    # aliases to keep up BC
     fh_webpack.twig_extension:
-        class: FH\Bundle\WebpackBundle\Twig\WebpackExtension
-        arguments:
-            - '@assets.packages'
-            - '@fh_webpack.webpack_helper'
-        tags:
-            - { name: twig.extension }
+        alias: FH\Bundle\WebpackBundle\Twig\WebpackExtension
+        # next line can be enabled when Symfony 4.3 becomes the minimal supported version
+        #deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
 
     fh_webpack.webpack_helper:
-        class: FH\Bundle\WebpackBundle\Templating\WebpackHelper
-        arguments:
-            - '@fh_webpack.stats_parser'
-            - '%fh_webpack.web_dir%'
-            - '%fh_webpack.stats_filename%'
+        alias: FH\Bundle\WebpackBundle\Templating\WebpackHelper
+        # next line can be enabled when Symfony 4.3 becomes the minimal supported version
+        #deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
 
     fh_webpack.stats_parser:
-        class: FH\WebpackStats\Parser\StandardParser
+        alias: FH\WebpackStats\Parser\StandardParser
+        # next line can be enabled when Symfony 4.3 becomes the minimal supported version
+        #deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
