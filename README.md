@@ -16,7 +16,8 @@ Install with composer:
 composer require freshheads/webpack-bundle
 ```
 
-Add the bundle to your AppKernel:
+### Register the bundle
+Symfony < 4:
 
 ```php
 // app/AppKernel.php
@@ -24,6 +25,16 @@ Add the bundle to your AppKernel:
 $bundles = [
     // ...
     new FH\Bundle\WebpackBundle\FHWebpackBundle(),
+];
+```
+
+Symfony >= 4
+
+```php
+// config/bundles.php
+return [
+    // ...
+    FH\Bundle\WebpackBundle\FHWebpackBundle::class => [ 'all' => true ]
 ];
 ```
 
@@ -52,4 +63,4 @@ Usage
 Requirements
 ------------
 
-This library works with PHP 5.6.0 and up.
+This library works with PHP 7.2 and up.
