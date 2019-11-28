@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /*
  * This file is part of the Freshheads Webpack bundle.
@@ -13,20 +14,15 @@ namespace FH\Bundle\WebpackBundle\Twig;
 
 use FH\Bundle\WebpackBundle\Templating\WebpackHelper;
 use Symfony\Component\Asset\Packages;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
  */
-class WebpackExtension extends \Twig_Extension
+class WebpackExtension extends AbstractExtension
 {
-    /**
-     * @var Packages
-     */
     private $packages;
-
-    /**
-     * @var WebpackHelper
-     */
     private $webpackHelper;
 
     public function __construct(Packages $packages, WebpackHelper $webpackHelper)
@@ -35,24 +31,19 @@ class WebpackExtension extends \Twig_Extension
         $this->webpackHelper = $webpackHelper;
     }
 
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
-            new \Twig_SimpleFunction('webpack_asset', [$this, 'getAssetUrl'])
+            new TwigFunction('webpack_asset', [$this, 'getAssetUrl'])
         ];
     }
 
-    public function getAssetUrl($path, $chunkName, $extension = 'js', $packageName = null)
+    public function getAssetUrl($path, $chunkName, $extension = 'js', $packageName = null): string
     {
         return
             $this->packages->getUrl(
                 $this->webpackHelper->getAssetUrl($path, $chunkName, $extension),
                 $packageName
             );
-    }
-
-    public function getName()
-    {
-        return 'fh_webpack';
     }
 }
