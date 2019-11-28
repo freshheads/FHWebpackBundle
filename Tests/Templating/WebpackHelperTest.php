@@ -9,51 +9,50 @@
  * file that was distributed with this source code.
  */
 
-namespace FH\Bundle\WebpackBundle\Templating;
+namespace Tests\Templating;
 
+use FH\Bundle\WebpackBundle\Templating\WebpackHelper;
 use FH\WebpackStats\Parser\StandardParser;
+use PHPUnit\Framework\TestCase;
+use RuntimeException;
 
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
  */
-final class WebpackHelperTest extends \PHPUnit_Framework_TestCase
+final class WebpackHelperTest extends TestCase
 {
-    /**
-     * @var WebpackHelper
-     */
     private $helper;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->helper = new WebpackHelper(new StandardParser(), __DIR__ . '/web');
     }
 
-    public function testAssetsByChunkNameIsFound()
+    public function testAssetsByChunkNameIsFound(): void
     {
         $url = $this->helper->getAssetUrl('', 'app', 'js');
 
         $this->assertEquals('/app.js', $url);
     }
 
-    public function testAssetsWithForwardSlashIsFound()
+    public function testAssetsWithForwardSlashIsFound(): void
     {
         $url = $this->helper->getAssetUrl('', 'img/icon-facebook', 'jpg');
 
         $this->assertEquals('/img/icon-facebook.13fc22a6e0bfbe76b20cf09c284531d7.jpg', $url);
     }
 
-    public function testAssetIsFound()
+    public function testAssetIsFound(): void
     {
         $url = $this->helper->getAssetUrl('', 'font', 'woff2');
 
         $this->assertEquals('/font.90afa358faca7496fd211daa167dcb46.woff2', $url);
     }
 
-    /**
-     * @expectedException \RuntimeException
-     */
-    public function testAssetCouldNotBeFound()
+    public function testAssetCouldNotBeFound(): void
     {
+        $this->expectException(RuntimeException::class);
+
         $this->helper->getAssetUrl('', 'xuifysdiufysdifysdifysdi');
     }
 }

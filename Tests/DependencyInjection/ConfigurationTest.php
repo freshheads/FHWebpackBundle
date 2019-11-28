@@ -9,19 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace FH\Bundle\WebpackBundle\DependencyInjection;
+namespace Tests\DependencyInjection;
 
+use FH\Bundle\WebpackBundle\DependencyInjection\Configuration;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Definition\Processor;
 
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
  */
-final class ConfigurationTest extends \PHPUnit_Framework_TestCase
+final class ConfigurationTest extends TestCase
 {
     /**
      * @dataProvider dataForProcessedConfiguration
      */
-    public function testProcessedConfiguration($configs, $expectedConfig)
+    public function testProcessedConfiguration(array $configs, array $expectedConfig): void
     {
         $processor = new Processor();
         $configuration = new Configuration();
@@ -30,7 +32,7 @@ final class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedConfig, $config);
     }
 
-    public function dataForProcessedConfiguration()
+    public function dataForProcessedConfiguration(): array
     {
         return [
             [
