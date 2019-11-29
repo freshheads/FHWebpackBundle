@@ -1,5 +1,5 @@
 parameters:
-    fh_webpack.web_dir: '%kernel.root_dir%/../web'
+    fh_webpack.web_dir: '%kernel.project_dir%/web'
     fh_webpack.stats_filename: 'stats.json'
 
 services:

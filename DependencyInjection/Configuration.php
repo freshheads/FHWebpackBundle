@@ -43,7 +43,7 @@ class Configuration implements ConfigurationInterface
                     ->cannotBeEmpty()
                 ->end()
                 ->scalarNode('web_dir')
-                    ->example('%kernel.root_dir%/../web')
+                    ->example('%kernel.project_dir%/web')
                     ->cannotBeEmpty()
                 ->end()
             ->end();
