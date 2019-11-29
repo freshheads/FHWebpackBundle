@@ -48,7 +48,7 @@ All configuration options, with default values:
 fh_webpack:
     stats_filename: stats.json
     # web/document root, assets will be referenced from this path
-    web_dir: '%kernel.root_dir%/../web'
+    web_dir: '%kernel.project_dir%/web'
 ```
 
 
