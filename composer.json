@@ -29,10 +29,10 @@
         "freshheads/webpack-stats": "^1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.4 | ^9.0"
+        "symfony/phpunit-bridge": "^4.4 | ^5.0"
     },
     "scripts": {
-        "test": "vendor/bin/phpunit --color=always"
+        "test": "vendor/bin/simple-phpunit --color=always --testdox"
     },
     "autoload": {
         "psr-4": { "FH\\Bundle\\WebpackBundle\\": "" }
