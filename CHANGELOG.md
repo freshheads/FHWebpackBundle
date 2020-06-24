@@ -3,6 +3,14 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes).
 
+1.4.0
+---
+
+* Drops support for Symfony versions below 4.4
+* Allows php version 7.2 and higher
+* Runs tests against Symfony's phpunit bridge
+* Makes bundle config classes final
+
 1.3.0
 -----
 
