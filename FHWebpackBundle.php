@@ -16,6 +16,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
  */
-class FHWebpackBundle extends Bundle
+final class FHWebpackBundle extends Bundle
 {
 }
