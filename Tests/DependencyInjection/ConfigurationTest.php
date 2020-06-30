@@ -10,7 +10,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Tests\DependencyInjection;
+namespace FH\Bundle\WebpackBundle\Tests\DependencyInjection;
 
 use FH\Bundle\WebpackBundle\DependencyInjection\Configuration;
 use PHPUnit\Framework\TestCase;
