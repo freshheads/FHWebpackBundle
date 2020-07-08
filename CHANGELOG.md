@@ -9,7 +9,7 @@ This changelog references the relevant changes (bug and security fixes).
 * Drops support for Symfony versions below 4.4
 * Allows php version 7.2 and higher
 * Runs tests against Symfony's phpunit bridge
-* Makes bundle config classes final
+* Marks bundle config classes as final in docblocks; will be final in next major
 
 1.3.0
 -----

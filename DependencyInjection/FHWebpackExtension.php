@@ -19,8 +19,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
+ * @final
  */
-final class FHWebpackExtension extends Extension
+class FHWebpackExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
