@@ -6,7 +6,7 @@ cache:
 
 env:
     global:
-        - PHPUNIT_FLAGS="-v -c ."
+        - PHPUNIT_FLAGS="--colors=always --testdox -v -c ."
         - SYMFONY_DEPRECATIONS_HELPER="max[self]=0"
 
 matrix:
@@ -40,7 +40,7 @@ install:
 
 script:
     - composer validate --strict --no-check-lock
-    - ./vendor/bin/phpunit $PHPUNIT_FLAGS
+    - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
 
 notifications:
     email: travis-ci@freshheads.com

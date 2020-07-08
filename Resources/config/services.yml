@@ -20,15 +20,12 @@ services:
     # aliases to keep up BC
     fh_webpack.twig_extension:
         alias: FH\Bundle\WebpackBundle\Twig\WebpackExtension
-        # next line can be enabled when Symfony 4.3 becomes the minimal supported version
-        #deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
+        deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
 
     fh_webpack.webpack_helper:
         alias: FH\Bundle\WebpackBundle\Templating\WebpackHelper
-        # next line can be enabled when Symfony 4.3 becomes the minimal supported version
-        #deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
+        deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
 
     fh_webpack.stats_parser:
         alias: FH\WebpackStats\Parser\StandardParser
-        # next line can be enabled when Symfony 4.3 becomes the minimal supported version
-        #deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
+        deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'

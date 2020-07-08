@@ -19,6 +19,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
+ * @final
  */
 class FHWebpackExtension extends Extension
 {

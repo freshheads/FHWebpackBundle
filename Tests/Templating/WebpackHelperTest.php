@@ -10,7 +10,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Tests\Templating;
+namespace FH\Bundle\WebpackBundle\Tests\Templating;
 
 use FH\Bundle\WebpackBundle\Templating\WebpackHelper;
 use FH\WebpackStats\Parser\StandardParser;
