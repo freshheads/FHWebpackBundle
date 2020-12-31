@@ -55,4 +55,10 @@ final class WebpackHelperTest extends TestCase
 
         $this->helper->getAssetUrl('', 'xuifysdiufysdifysdifysdi');
     }
+
+    public function testAssetsPathIsFound(): void
+    {
+        $path = $this->helper->getAssetsPath('', 'font', 'woff2');
+        $this->assertStringContainsString('/Tests/Templating/web/font.90afa358faca7496fd211daa167dcb46.woff2', $path);
+    }
 }

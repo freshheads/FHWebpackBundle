@@ -69,6 +69,12 @@ class WebpackHelper extends Helper
         );
     }
 
+    public function getAssetsPath(string $path, string $name, string $extension = 'js'): string
+    {
+        $assetUrl = $this->getAssetUrl($path, $name, $extension);
+        return rtrim($this->webDir, '/') . $assetUrl;
+    }
+
     public function getName(): string
     {
         return 'fh_webpack';

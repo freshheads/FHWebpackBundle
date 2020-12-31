@@ -34,7 +34,8 @@ class WebpackExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('webpack_asset', [$this, 'getAssetUrl'])
+            new TwigFunction('webpack_asset', [$this, 'getAssetUrl']),
+            new TwigFunction('webpack_asset_contents', [$this, 'getAssetContents']),
         ];
     }
 
@@ -45,5 +46,18 @@ class WebpackExtension extends AbstractExtension
                 $this->webpackHelper->getAssetUrl($path, $chunkName, $extension),
                 $packageName
             );
+    }
+
+    public function getAssetContents($path, $chunkName, $extension = 'js'): string
+    {
+        $assetsPath = $this->webpackHelper->getAssetsPath($path, $chunkName, $extension);
+
+        if (!file_exists($assetsPath) || !is_readable($assetsPath)) {
+            throw new \RuntimeException(
+                sprintf('Asset with name "%s" could not be found or is not readable.', $chunkName)
+            );
+        }
+
+        return file_get_contents($assetsPath);
     }
 }
