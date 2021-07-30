@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -22,7 +23,14 @@ use Twig\TwigFunction;
  */
 class WebpackExtension extends AbstractExtension
 {
+    /**
+     * @var Packages
+     */
     private $packages;
+
+    /**
+     * @var WebpackHelper
+     */
     private $webpackHelper;
 
     public function __construct(Packages $packages, WebpackHelper $webpackHelper)
@@ -34,11 +42,11 @@ class WebpackExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('webpack_asset', [$this, 'getAssetUrl'])
+            new TwigFunction('webpack_asset', [$this, 'getAssetUrl']),
         ];
     }
 
-    public function getAssetUrl($path, $chunkName, $extension = 'js', $packageName = null): string
+    public function getAssetUrl(string $path, string $chunkName, string $extension = 'js', string $packageName = null): string
     {
         return
             $this->packages->getUrl(

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -30,7 +31,7 @@ final class ConfigurationTest extends TestCase
         $configuration = new Configuration();
         $config = $processor->processConfiguration($configuration, $configs);
 
-        $this->assertEquals($expectedConfig, $config);
+        $this->assertSame($expectedConfig, $config);
     }
 
     public function dataForProcessedConfiguration(): array
@@ -38,25 +39,25 @@ final class ConfigurationTest extends TestCase
         return [
             [
                 [
-                    ['web_dir' => '/web']
+                    ['web_dir' => '/web'],
                 ],
                 [
+                    'web_dir' => '/web',
                     'stats_filename' => 'stats.json',
-                    'web_dir' => '/web'
-                ]
+                ],
             ],
             [
                 [
                     [
                         'web_dir' => '/web',
-                        'stats_filename' => 'webpack-stats.json'
-                    ]
+                        'stats_filename' => 'webpack-stats.json',
+                    ],
                 ],
                 [
+                    'web_dir' => '/web',
                     'stats_filename' => 'webpack-stats.json',
-                    'web_dir' => '/web'
-                ]
-            ]
+                ],
+            ],
         ];
     }
 }

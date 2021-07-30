@@ -1,0 +1,40 @@
+name: Pull request checks
+
+on: [ pull_request ]
+
+jobs:
+    tests:
+        runs-on: [ self-hosted, php ]
+        timeout-minutes: 7
+        strategy:
+            matrix:
+                composer-options:
+                    - --prefer-dist --no-progress --no-interaction
+                    - --prefer-dist --no-progress --no-interaction --prefer-lowest
+        steps:
+            # Runner information
+            - name: Echo PHP version
+              run: php -v
+
+            - name: Echo Composer version
+              run: composer --version
+
+            # Checkout & installation
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Composer install
+              run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+            - name: Composer update
+              run: composer update ${{ matrix.composer-options }}
+
+            # Tests
+            - name: Run phpstan
+              run: composer run-script phpstan
+
+            - name: Run lint PHP
+              run: composer run-script php-lint
+
+            - name: Run PHP unit test suite
+              run: composer run-script test

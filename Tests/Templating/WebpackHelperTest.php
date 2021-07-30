@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -21,32 +22,35 @@ use PHPUnit\Framework\TestCase;
  */
 final class WebpackHelperTest extends TestCase
 {
+    /**
+     * @var WebpackHelper
+     */
     private $helper;
 
     protected function setUp(): void
     {
-        $this->helper = new WebpackHelper(new StandardParser(), __DIR__ . '/web');
+        $this->helper = new WebpackHelper(new StandardParser(), __DIR__.'/web');
     }
 
     public function testAssetsByChunkNameIsFound(): void
     {
         $url = $this->helper->getAssetUrl('', 'app', 'js');
 
-        $this->assertEquals('/app.js', $url);
+        $this->assertSame('/app.js', $url);
     }
 
     public function testAssetsWithForwardSlashIsFound(): void
     {
         $url = $this->helper->getAssetUrl('', 'img/icon-facebook', 'jpg');
 
-        $this->assertEquals('/img/icon-facebook.13fc22a6e0bfbe76b20cf09c284531d7.jpg', $url);
+        $this->assertSame('/img/icon-facebook.13fc22a6e0bfbe76b20cf09c284531d7.jpg', $url);
     }
 
     public function testAssetIsFound(): void
     {
         $url = $this->helper->getAssetUrl('', 'font', 'woff2');
 
-        $this->assertEquals('/font.90afa358faca7496fd211daa167dcb46.woff2', $url);
+        $this->assertSame('/font.90afa358faca7496fd211daa167dcb46.woff2', $url);
     }
 
     public function testAssetCouldNotBeFound(): void

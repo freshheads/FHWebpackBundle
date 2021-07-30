@@ -1,0 +1,19 @@
+parameters:
+    level: max
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+
+    paths:
+        - %currentWorkingDirectory%
+
+    excludePaths:
+        - %currentWorkingDirectory%/.tools
+        - %currentWorkingDirectory%/vendor
+
+    scanFiles:
+        - vendor/twig/twig/src/Extension/EscaperExtension.php
+
+    bootstrapFiles:
+        # https://github.com/phpstan/phpstan/issues/694
+        # https://github.com/symfony/symfony/issues/36202
+        - vendor/bin/.phpunit/phpunit/vendor/autoload.php
