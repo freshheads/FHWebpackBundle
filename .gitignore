@@ -2,3 +2,7 @@
 /.phpunit.result.cache
 /composer.lock
 /vendor
+/.tools/*/vendor
+/.tools/*/composer.lock
+.phpunit.result.cache
+.php_cs.cache

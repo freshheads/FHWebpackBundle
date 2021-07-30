@@ -1,0 +1,9 @@
+{
+    "require": {
+        "phpstan/phpstan": "^0.12.76",
+        "phpstan/phpstan-doctrine": "^0.12.32",
+        "phpstan/phpstan-phpunit": "^0.12.17",
+        "phpstan/phpstan-symfony": "^0.12.19",
+        "phpstan/phpstan-beberlei-assert": "^0.12.6"
+    }
+}
