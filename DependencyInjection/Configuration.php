@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -25,7 +26,8 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('fh_webpack');
         $rootNode = $treeBuilder->getRootNode();
-        
+
+        /* @phpstan-ignore-next-line */
         $rootNode
             ->children()
                 ->scalarNode('stats_filename')

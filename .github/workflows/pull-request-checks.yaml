@@ -35,3 +35,6 @@ jobs:
 
             - name: Run lint PHP
               run: composer run-script php-lint
+
+            - name: Run PHP unit test suite
+              run: composer run-script test

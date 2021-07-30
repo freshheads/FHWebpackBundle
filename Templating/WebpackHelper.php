@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -26,9 +27,24 @@ class WebpackHelper extends Helper
     private const STATS_FILENAME = 'stats.json';
     private const ASSETS_REGEX = '/^%s\.[0-9a-zA-Z]+\.%s$/';
 
+    /**
+     * @var Parser
+     */
     private $statsParser;
+
+    /**
+     * @var string
+     */
     private $webDir;
+
+    /**
+     * @var string
+     */
     private $statsFilename;
+
+    /**
+     * @var mixed
+     */
     private $stats = [];
 
     public function __construct(Parser $statsParser, string $webDir, string $statsFilename = self::STATS_FILENAME)
@@ -43,12 +59,11 @@ class WebpackHelper extends Helper
      */
     public function getAssetUrl(string $path, string $name, string $extension = 'js'): string
     {
-        $assetsPath = $this->normalizePath($this->webDir . DIRECTORY_SEPARATOR . $path);
-        $stats = $this->getStats($assetsPath . DIRECTORY_SEPARATOR . $this->statsFilename);
+        $assetsPath = $this->normalizePath($this->webDir.\DIRECTORY_SEPARATOR.$path);
+        $stats = $this->getStats($assetsPath.\DIRECTORY_SEPARATOR.$this->statsFilename);
 
         try {
-            return rtrim($path, '/')  . '/' . $this->resolveAssetByChunkName($stats, $name, $extension);
-
+            return rtrim($path, '/').'/'.$this->resolveAssetByChunkName($stats, $name, $extension);
         } catch (PropertyNotFoundException $e) {
             // No chunks defined in stats.json
         } catch (ChunkNotFoundException $e) {
@@ -56,17 +71,14 @@ class WebpackHelper extends Helper
         }
 
         try {
-            return rtrim($path, '/')  . '/' . $this->resolveAsset($stats, $name, $extension);
-
+            return rtrim($path, '/').'/'.$this->resolveAsset($stats, $name, $extension);
         } catch (PropertyNotFoundException $e) {
             // No assets defined in stats.json
         } catch (\RuntimeException $e) {
             // Asset could not be found
         }
 
-        throw new \RuntimeException(
-            sprintf('Asset with name "%s" could not be found in stats.json file', $name)
-        );
+        throw new \RuntimeException(sprintf('Asset with name "%s" could not be found in stats.json file', $name));
     }
 
     public function getName(): string
@@ -78,7 +90,7 @@ class WebpackHelper extends Helper
      * @throws PropertyNotFoundException
      * @throws ChunkNotFoundException
      */
-    private function resolveAssetByChunkName(Stats $stats, string $name, string $extension): string
+    private function resolveAssetByChunkName(Stats $stats, string $name, string $extension): ?string
     {
         return $stats
             ->getAssetsByChunkName()
@@ -110,6 +122,7 @@ class WebpackHelper extends Helper
 
         $statsJson = file_get_contents($statsFile);
 
+        /* @phpstan-ignore-next-line */
         return $this->stats[$statsFile] = $this->statsParser->parse($statsJson);
     }
 

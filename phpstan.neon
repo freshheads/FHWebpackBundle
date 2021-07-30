@@ -12,3 +12,8 @@ parameters:
 
     scanFiles:
         - vendor/twig/twig/src/Extension/EscaperExtension.php
+
+    bootstrapFiles:
+        # https://github.com/phpstan/phpstan/issues/694
+        # https://github.com/symfony/symfony/issues/36202
+        - vendor/bin/.phpunit/phpunit/vendor/autoload.php
