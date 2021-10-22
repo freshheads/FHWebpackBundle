@@ -55,9 +55,19 @@ fh_webpack:
 Usage
 -----
 
+### Link webpack files
+
 ```jinja
 <link rel="stylesheet" href="{{ webpack_asset('assets/frontend/build', 'app', 'css') }}" />
 <script type="text/javascript" src="{{ webpack_asset('assets/frontend/build', 'app', 'js') }}"></script>
+```
+
+### Dump the contents of a webpack file
+
+```jinja
+<style type="text/css">
+    {{ webpack_asset_contents('assets/frontend/build', 'email', 'css')|raw }}
+</style>
 ```
 
 Requirements
