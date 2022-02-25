@@ -16,20 +16,20 @@
         "issues": "https://github.com/freshheads/FHWebpackBundle/issues"
     },
     "require": {
-        "php": ">=7.3",
-        "symfony/asset": "^4.4 | ^5.0",
-        "symfony/config": "^4.4 | ^5.0",
-        "symfony/dependency-injection": "^4.4 | ^5.0",
-        "symfony/event-dispatcher": "^4.4 | ^5.0",
-        "symfony/http-kernel": "^4.4 | ^5.0",
-        "symfony/yaml": "^4.4 | ^5.0",
-        "symfony/twig-bundle": "^4.4 | ^5.0",
-        "symfony/templating": "^4.4 | ^5.0",
+        "php": ">=7.4",
+        "symfony/asset": "^5.4 | ^6.0",
+        "symfony/config": "^5.4 | ^6.0",
+        "symfony/dependency-injection": "^5.4 | ^6.0",
+        "symfony/event-dispatcher": "^5.4 | ^6.0",
+        "symfony/http-kernel": "^5.4 | ^6.0",
+        "symfony/yaml": "^5.4 | ^6.0",
+        "symfony/twig-bundle": "^5.4 | ^6.0",
+        "symfony/templating": "^5.4 | ^6.0",
         "twig/twig" : "^2.0 | ^3.0",
         "freshheads/webpack-stats": "^1.1"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.4 | ^5.0"
+        "symfony/phpunit-bridge": "^5.4 | ^6.0"
     },
     "scripts": {
         "test": "vendor/bin/simple-phpunit --color=always --testdox"
@@ -39,7 +39,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "1.x-dev"
+            "dev-develop": "2.x-dev"
         }
     }
 }

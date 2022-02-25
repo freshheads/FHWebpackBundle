@@ -3,14 +3,22 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes).
 
-1.4.0
----
+2.x.x
+-----
 
-* Drops support for Symfony versions below 4.4
-* Allows php version 7.2 and higher
-* Runs tests against Symfony's phpunit bridge
-* Updates namespace of test classes to match psr-4 standards
-* Marks bundle config classes as final in docblocks; will be final in next major
+  * Added support for PHP 7.4.x and 8.x
+  * Added support for Symfony 6.x
+  * Dropped support for PHP 7.3.x
+  * Dropped support for Symfony 4.x
+
+1.4.0
+-----
+
+  * Drops support for Symfony versions below 4.4
+  * Allows php version 7.2 and higher
+  * Runs tests against Symfony's phpunit bridge
+  * Updates namespace of test classes to match psr-4 standards
+  * Marks bundle config classes as final in docblocks; will be final in next major
 
 1.3.0
 -----
