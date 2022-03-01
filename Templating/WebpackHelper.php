@@ -86,7 +86,7 @@ class WebpackHelper extends Helper
      */
     private function resolveAssetByChunkName(Stats $stats, string $name, string $extension): string
     {
-        return $stats
+        return (string) $stats
             ->getAssetsByChunkName()
             ->getAsset($name, sprintf('/\.%s$/', preg_quote($extension, '/')));
     }
