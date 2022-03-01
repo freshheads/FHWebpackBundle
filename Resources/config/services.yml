@@ -16,16 +16,3 @@ services:
 
     # alias
     FH\WebpackStats\Parser\Parser: '@FH\WebpackStats\Parser\StandardParser'
-
-    # aliases to keep up BC
-    fh_webpack.twig_extension:
-        alias: FH\Bundle\WebpackBundle\Twig\WebpackExtension
-        deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
-
-    fh_webpack.webpack_helper:
-        alias: FH\Bundle\WebpackBundle\Templating\WebpackHelper
-        deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
-
-    fh_webpack.stats_parser:
-        alias: FH\WebpackStats\Parser\StandardParser
-        deprecated: 'The "%alias_id%" service alias is deprecated, make use of autowiring or FQN.'
