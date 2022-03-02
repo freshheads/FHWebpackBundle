@@ -6,10 +6,12 @@ This changelog references the relevant changes (bug and security fixes).
 2.x.x
 -----
 
-  * Added support for PHP 7.4.x and 8.x
   * Added support for Symfony 6.x
-  * Dropped support for PHP 7.3.x
+  * Removed deprecated `fh_webpack.twig_extension` service alias
+  * Removed deprecated `fh_webpack.webpack_helper` service alias
+  * Removed deprecated `fh_webpack.stats_parser` service alias
   * Dropped support for Symfony 4.x
+  * Dropped support for PHP version prior to 7.4
 
 1.4.0
 -----
