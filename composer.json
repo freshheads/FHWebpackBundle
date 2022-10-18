@@ -26,7 +26,7 @@
         "symfony/twig-bundle": "^5.4 | ^6.0",
         "symfony/templating": "^5.4 | ^6.0",
         "twig/twig" : "^2.0 | ^3.0",
-        "freshheads/webpack-stats": "2.0.0-rc.1"
+        "freshheads/webpack-stats": "^2.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^5.4 | ^6.0"
