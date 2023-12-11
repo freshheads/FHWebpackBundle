@@ -16,12 +16,11 @@ use FH\WebpackStats\Exception\ChunkNotFoundException;
 use FH\WebpackStats\Exception\PropertyNotFoundException;
 use FH\WebpackStats\Parser\Parser;
 use FH\WebpackStats\Stats;
-use Symfony\Component\Templating\Helper\Helper;
 
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
  */
-final class WebpackHelper extends Helper
+final class WebpackHelper
 {
     private const string STATS_FILENAME = 'stats.json';
     private const string ASSETS_REGEX = '/^%s\.[0-9a-zA-Z]+\.%s$/';

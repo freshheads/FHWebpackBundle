@@ -24,7 +24,6 @@
         "symfony/http-kernel": "^6.4 | ^7.0",
         "symfony/yaml": "^6.4 | ^7.0",
         "symfony/twig-bundle": "^6.4 | ^7.0",
-        "symfony/templating": "^6.4 | ^7.0",
         "twig/twig" : "^3.0",
         "freshheads/webpack-stats": "^2.0"
     },
