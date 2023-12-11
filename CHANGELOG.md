@@ -3,6 +3,15 @@ CHANGELOG
 
 This changelog references the relevant changes (bug and security fixes).
 
+3.x
+-----
+
+  * Added support for Symfony versions 7.x
+  * Dropped support for Symfony versions prior to 6.4
+  * Dropped support for PHP version prior to 8.3
+  * Makes most internal classes, if not all, final.
+  * Default of parameter `fh_webpack.web_dir` changed from `%kernel.project_dir%/web` to `%kernel.project_dir%/public`
+
 2.x.x
 -----
 

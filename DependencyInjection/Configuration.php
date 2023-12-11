@@ -17,9 +17,8 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
- * @final
  */
-class Configuration implements ConfigurationInterface
+final readonly class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
@@ -34,7 +33,7 @@ class Configuration implements ConfigurationInterface
                     ->cannotBeEmpty()
                 ->end()
                 ->scalarNode('web_dir')
-                    ->example('%kernel.project_dir%/web')
+                    ->example('%kernel.project_dir%/public')
                     ->cannotBeEmpty()
                 ->end()
             ->end();

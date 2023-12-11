@@ -21,21 +21,18 @@ use Symfony\Component\Templating\Helper\Helper;
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
  */
-class WebpackHelper extends Helper
+final class WebpackHelper extends Helper
 {
-    private const STATS_FILENAME = 'stats.json';
-    private const ASSETS_REGEX = '/^%s\.[0-9a-zA-Z]+\.%s$/';
+    private const string STATS_FILENAME = 'stats.json';
+    private const string ASSETS_REGEX = '/^%s\.[0-9a-zA-Z]+\.%s$/';
 
-    private $statsParser;
-    private $webDir;
-    private $statsFilename;
-    private $stats = [];
+    private array $stats = [];
 
-    public function __construct(Parser $statsParser, string $webDir, string $statsFilename = self::STATS_FILENAME)
-    {
-        $this->statsParser = $statsParser;
-        $this->webDir = $webDir;
-        $this->statsFilename = $statsFilename;
+    public function __construct(
+        private Parser $statsParser,
+        private string $webDir,
+        private string $statsFilename = self::STATS_FILENAME
+    ) {
     }
 
     /**

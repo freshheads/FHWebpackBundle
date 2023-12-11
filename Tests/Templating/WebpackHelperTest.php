@@ -25,7 +25,7 @@ final class WebpackHelperTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->helper = new WebpackHelper(new StandardParser(), __DIR__ . '/web');
+        $this->helper = new WebpackHelper(new StandardParser(), __DIR__ . '/public');
     }
 
     public function testAssetsByChunkNameIsFound(): void
@@ -59,6 +59,6 @@ final class WebpackHelperTest extends TestCase
     public function testAssetsPathIsFound(): void
     {
         $path = $this->helper->getAssetsPath('', 'font', 'woff2');
-        $this->assertStringContainsString('/Tests/Templating/web/font.90afa358faca7496fd211daa167dcb46.woff2', $path);
+        $this->assertStringContainsString('/Tests/Templating/public/font.90afa358faca7496fd211daa167dcb46.woff2', $path);
     }
 }

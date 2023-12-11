@@ -1,5 +1,5 @@
 parameters:
-    fh_webpack.web_dir: '%kernel.project_dir%/web'
+    fh_webpack.web_dir: '%kernel.project_dir%/public'
     fh_webpack.stats_filename: 'stats.json'
 
 services:
@@ -10,7 +10,7 @@ services:
     FH\WebpackStats\Parser\StandardParser: ~
     FH\Bundle\WebpackBundle\Twig\WebpackExtension: ~
     FH\Bundle\WebpackBundle\Templating\WebpackHelper:
-        bind:
+        arguments:
             $webDir: '%fh_webpack.web_dir%'
             $statsFilename: '%fh_webpack.stats_filename%'
 

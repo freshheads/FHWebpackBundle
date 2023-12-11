@@ -20,15 +20,12 @@ use Twig\TwigFunction;
 /**
  * @author Joris van de Sande <joris.van.de.sande@freshheads.com>
  */
-class WebpackExtension extends AbstractExtension
+final class WebpackExtension extends AbstractExtension
 {
-    private $packages;
-    private $webpackHelper;
-
-    public function __construct(Packages $packages, WebpackHelper $webpackHelper)
-    {
-        $this->packages = $packages;
-        $this->webpackHelper = $webpackHelper;
+    public function __construct(
+        private readonly Packages $packages,
+        private readonly WebpackHelper $webpackHelper,
+    ) {
     }
 
     public function getFunctions(): array

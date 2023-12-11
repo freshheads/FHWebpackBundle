@@ -38,23 +38,23 @@ final class ConfigurationTest extends TestCase
         return [
             [
                 [
-                    ['web_dir' => '/web']
+                    ['web_dir' => '/public']
                 ],
                 [
                     'stats_filename' => 'stats.json',
-                    'web_dir' => '/web'
+                    'web_dir' => '/public'
                 ]
             ],
             [
                 [
                     [
-                        'web_dir' => '/web',
+                        'web_dir' => '/public',
                         'stats_filename' => 'webpack-stats.json'
                     ]
                 ],
                 [
                     'stats_filename' => 'webpack-stats.json',
-                    'web_dir' => '/web'
+                    'web_dir' => '/public'
                 ]
             ]
         ];
