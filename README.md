@@ -1,8 +1,6 @@
 FHWebpackBundle
 ===============
 
-[![Build Status](https://travis-ci.org/freshheads/FHWebpackBundle.png?branch=develop)](https://travis-ci.org/freshheads/FHWebpackBundle)
-
 A Symfony bundle to create paths to webpack assets in your Twig templates.
 This bundle uses the webpack statistics file to find the newest assets for a given webpack entry.
 
