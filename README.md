@@ -56,4 +56,4 @@ Usage
 Requirements
 ------------
 
-This library works with PHP version 8.3 and up.
+This library works with PHP version 8.1 and up.
