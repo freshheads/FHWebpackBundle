@@ -16,19 +16,19 @@
         "issues": "https://github.com/freshheads/FHWebpackBundle/issues"
     },
     "require": {
-        "php": ">=8.1",
-        "symfony/asset": "^6.4 | ^7.0",
-        "symfony/config": "^6.4 | ^7.0",
-        "symfony/dependency-injection": "^6.4 | ^7.0",
-        "symfony/event-dispatcher": "^6.4 | ^7.0",
-        "symfony/http-kernel": "^6.4 | ^7.0",
-        "symfony/yaml": "^6.4 | ^7.0",
-        "symfony/twig-bundle": "^6.4 | ^7.0",
+        "php": ">=8.4",
+        "symfony/asset": "^7.4 | ^8.0",
+        "symfony/config": "^7.4 | ^8.0",
+        "symfony/dependency-injection": "^7.4 | ^8.0",
+        "symfony/event-dispatcher": "^7.4 | ^8.0",
+        "symfony/http-kernel": "^7.4 | ^8.0",
+        "symfony/yaml": "^7.4 | ^8.0",
+        "symfony/twig-bundle": "^7.4 | ^8.0",
         "twig/twig" : "^3.0",
         "freshheads/webpack-stats": "^2.0"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^6.4 | ^7.0"
+        "symfony/phpunit-bridge": "^7.4 | ^8.0"
     },
     "scripts": {
         "test": "vendor/bin/simple-phpunit --color=always --testdox"
@@ -42,4 +42,3 @@
         }
     }
 }
-
